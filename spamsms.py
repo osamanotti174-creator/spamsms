@@ -27,23 +27,28 @@ s = g.read().splitlines()
               
 
 
+from rich.console import Console
+from rich.gradient import Gradient
+from rich.text import Text
+
 def home():
-	print('''
-
-
-
-:::::::::: ::::::::   ::::::::   ::::::::  ::::::::::: :::::::::: :::::::::::  :::   ::: 
-     :+:       :+:    :+: :+:    :+: :+:    :+:     :+:     :+:            :+:      :+:   :+:  
-    +:+       +:+        +:+    +:+ +:+            +:+     +:+            +:+       +:+ +:+    
-   :#::+::#  +#++:++#++ +#+    +:+ +#+            +#+     +#++:++#       +#+        +#++:      
-  +#+              +#+ +#+    +#+ +#+            +#+     +#+            +#+         +#+        
- #+#       #+#    #+# #+#    #+# #+#    #+#     #+#     #+#            #+#         #+#         
-###        ########   ########   ########  ########### ##########     ###         ###
-
--------------- Make By BOss ---------------                           
-                                  
+    console = Console()
     
-	''')
+    ascii_art = '''
+________   __    __  _______    ______    ______    ______  
+  /  _____/ /  |  /  |/  __   \  /      \  /  ___/   /  ___/  
+ /   \  ___ |  |  |  ||  |  \  ||  /  \  | \___  \   \___  \  
+ \    \_\  \|  |__|  ||  |__/  ||  \__/  |/____  \  /____  \  
+  \______  / \______/ |_______/  \______/ \______/  \______/  
+         \/                                                   
+    '''
+    rainbow_text = Text(ascii_art)
+    rainbow_text.stylize("bold")
+    console.print(rainbow_text, style="gradient(red,yellow,green,cyan,blue,magenta)")
+
+if __name__ == "__main__":
+    home()
+	
 	phone = input(" \x1b[96mเบอร์โทร  : \x1b[92m")
 	
 	if int(phone) <= 99999999 or int(phone) >= 999999999:
